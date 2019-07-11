@@ -1,0 +1,6 @@
+{
+	"name": "IR-CONTOSO-IT",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

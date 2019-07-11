@@ -1,0 +1,12 @@
+{
+	"name": "bulkDataService",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=blankdb.database.windows.net;initial catalog=master;user id=azuretest",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkFERlRVVE9SSUFMREFUQUZBQ1RPUlkwNzA4X2E3OTE1MjhjLTI1MTktNDVmNS05YWFjLTcyZjU5Zjk3YTUzNiINCn0="
+		}
+	}
+}

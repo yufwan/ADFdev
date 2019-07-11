@@ -1,0 +1,55 @@
+{
+	"name": "AzureSqlDatabaseDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "bulkDataService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "instance_id",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "instance_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "type_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "type_version",
+				"type": "nvarchar"
+			},
+			{
+				"name": "description",
+				"type": "nvarchar"
+			},
+			{
+				"name": "type_stream",
+				"type": "varbinary"
+			},
+			{
+				"name": "date_created",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "created_by",
+				"type": "nvarchar"
+			},
+			{
+				"name": "database_name",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[sysdac_instances]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
