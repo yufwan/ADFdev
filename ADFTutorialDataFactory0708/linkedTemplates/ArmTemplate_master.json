@@ -1,0 +1,191 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory Name",
+			"defaultValue": "ADFTutorialDataFactory0708"
+		},
+		"integrationRuntime_IR-CONTOSO-IT": {
+			"type": "string",
+			"metadata": "Integration Runtime Name",
+			"defaultValue": "IR-CONTOSO-IT"
+		},
+		"integrationRuntime_MySelfHostedIR": {
+			"type": "string",
+			"metadata": "Integration Runtime Name",
+			"defaultValue": "MySelfHostedIR"
+		},
+		"integrationRuntime_integrationRuntime1": {
+			"type": "string",
+			"metadata": "Integration Runtime Name",
+			"defaultValue": "integrationRuntime1"
+		},
+		"integrationRuntime_integrationRuntimeAzure": {
+			"type": "string",
+			"metadata": "Integration Runtime Name",
+			"defaultValue": "integrationRuntimeAzure"
+		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
+		"AzureStorageLinkedService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureStorageLinkedService'"
+		},
+		"AzureStorageLinkedServiceIR_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureStorageLinkedServiceIR'"
+		},
+		"AzureTempBlobService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureTempBlobService'"
+		},
+		"HDlinkedService_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'HDlinkedService'"
+		},
+		"SqlServer1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SqlServer1'"
+		},
+		"bulkDataDWService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'bulkDataDWService'"
+		},
+		"bulkDataService_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'bulkDataService'"
+		},
+		"AzureBlob_properties_typeProperties_fileName": {
+			"type": "string",
+			"defaultValue": "emp.txt"
+		},
+		"AzureBlob_properties_typeProperties_folderPath": {
+			"type": "string",
+			"defaultValue": "yfadftutorial/input"
+		},
+		"HDlinkedService_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "admin"
+		},
+		"integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"type": "string",
+			"defaultValue": "blankdb.database.windows.net"
+		},
+		"integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"type": "string",
+			"defaultValue": "azuretest"
+		},
+		"integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"type": "secureString"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas Token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"integrationRuntime_IR-CONTOSO-IT": {
+						"value": "[parameters('integrationRuntime_IR-CONTOSO-IT')]"
+					},
+					"integrationRuntime_MySelfHostedIR": {
+						"value": "[parameters('integrationRuntime_MySelfHostedIR')]"
+					},
+					"integrationRuntime_integrationRuntime1": {
+						"value": "[parameters('integrationRuntime_integrationRuntime1')]"
+					},
+					"integrationRuntime_integrationRuntimeAzure": {
+						"value": "[parameters('integrationRuntime_integrationRuntimeAzure')]"
+					},
+					"AzureDatabricks1_accessToken": {
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					},
+					"AzureStorageLinkedService_connectionString": {
+						"value": "[parameters('AzureStorageLinkedService_connectionString')]"
+					},
+					"AzureStorageLinkedServiceIR_connectionString": {
+						"value": "[parameters('AzureStorageLinkedServiceIR_connectionString')]"
+					},
+					"AzureTempBlobService_connectionString": {
+						"value": "[parameters('AzureTempBlobService_connectionString')]"
+					},
+					"SqlServer1_connectionString": {
+						"value": "[parameters('SqlServer1_connectionString')]"
+					},
+					"bulkDataDWService_connectionString": {
+						"value": "[parameters('bulkDataDWService_connectionString')]"
+					},
+					"bulkDataService_connectionString": {
+						"value": "[parameters('bulkDataService_connectionString')]"
+					},
+					"HDlinkedService_password": {
+						"value": "[parameters('HDlinkedService_password')]"
+					},
+					"integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+						"value": "[parameters('integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint')]"
+					},
+					"integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+						"value": "[parameters('integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName')]"
+					},
+					"integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+						"value": "[parameters('integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword')]"
+					},
+					"AzureBlob_properties_typeProperties_fileName": {
+						"value": "[parameters('AzureBlob_properties_typeProperties_fileName')]"
+					},
+					"AzureBlob_properties_typeProperties_folderPath": {
+						"value": "[parameters('AzureBlob_properties_typeProperties_folderPath')]"
+					},
+					"HDlinkedService_properties_typeProperties_userName": {
+						"value": "[parameters('HDlinkedService_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ArmTemplate_0')]"
+			]
+		}
+	]
+}

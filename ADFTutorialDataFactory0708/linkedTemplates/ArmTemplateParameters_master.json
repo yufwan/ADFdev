@@ -1,0 +1,69 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADFTutorialDataFactory0708"
+		},
+		"integrationRuntime_IR-CONTOSO-IT": {
+			"value": "IR-CONTOSO-IT"
+		},
+		"integrationRuntime_MySelfHostedIR": {
+			"value": "MySelfHostedIR"
+		},
+		"integrationRuntime_integrationRuntime1": {
+			"value": "integrationRuntime1"
+		},
+		"integrationRuntime_integrationRuntimeAzure": {
+			"value": "integrationRuntimeAzure"
+		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"AzureStorageLinkedService_connectionString": {
+			"value": ""
+		},
+		"AzureStorageLinkedServiceIR_connectionString": {
+			"value": ""
+		},
+		"AzureTempBlobService_connectionString": {
+			"value": ""
+		},
+		"HDlinkedService_password": {
+			"value": ""
+		},
+		"SqlServer1_connectionString": {
+			"value": ""
+		},
+		"bulkDataDWService_connectionString": {
+			"value": ""
+		},
+		"bulkDataService_connectionString": {
+			"value": ""
+		},
+		"AzureBlob_properties_typeProperties_fileName": {
+			"value": "emp.txt"
+		},
+		"AzureBlob_properties_typeProperties_folderPath": {
+			"value": "yfadftutorial/input"
+		},
+		"HDlinkedService_properties_typeProperties_userName": {
+			"value": "admin"
+		},
+		"integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"value": "blankdb.database.windows.net"
+		},
+		"integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"value": "azuretest"
+		},
+		"integrationRuntime1_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"value": ""
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
