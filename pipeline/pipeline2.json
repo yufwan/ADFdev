@@ -1,0 +1,24 @@
+{
+	"name": "pipeline2",
+	"properties": {
+		"activities": [
+			{
+				"name": "WebHook1",
+				"type": "WebHook",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://s4events.azure-automation.net/webhooks?token=NXXDvqKUi6KY6VSlN48JxeILYKHzNuNwfz1ftw2xCnw%3d",
+					"method": "POST",
+					"body": {
+						"value": "{\n    \"message\": \"Scale Down BIPRD\"\n}",
+						"type": "Expression"
+					},
+					"timeout": "00:00:01"
+				}
+			}
+		],
+		"annotations": []
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

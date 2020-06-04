@@ -1,0 +1,16 @@
+{
+	"name": "HubspotObject1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Hubspot1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "HubspotObject",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "\"Hubspot\".\"Deals\""
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

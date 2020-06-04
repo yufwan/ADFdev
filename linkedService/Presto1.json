@@ -1,0 +1,20 @@
+{
+	"name": "Presto1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "This is presto connection with Azure data factory to pull dimensional data periodically.",
+		"annotations": [],
+		"type": "Presto",
+		"typeProperties": {
+			"host": "datagateway.data-engineering.myteksi.net",
+			"serverVersion": "0.193",
+			"catalog": "hive",
+			"port": "443",
+			"authenticationType": "LDAP",
+			"username": "utpal@grabtaxi.com;cluster=default",
+			"enableSsl": false,
+			"timeZoneID": "hive",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2Mzg2YjM0OS03ODgyLTQzMWQtYWQ5My0wZTY2NDhjZGRiMjAiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		}
+	}
+}

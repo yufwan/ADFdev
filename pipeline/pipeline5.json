@@ -1,0 +1,26 @@
+{
+	"name": "pipeline5",
+	"properties": {
+		"activities": [
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://jakieadlsgen2.file.core.windows.net/?comp=list&sv=2019-02-02&ss=bfqt&srt=sco&sp=rwdlacup&se=2020-04-12T16:12:22Z&st=2020-04-10T08:12:22Z&spr=https,http&sig=VYRVlzEw5ZXtBc5S2jgdprwKzgU2CBLv2pZMxRIzFuA%3D",
+					"method": "GET"
+				}
+			}
+		],
+		"annotations": []
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
